@@ -1,17 +1,10 @@
 # In-Memory Notes API
 
-A small Express.js REST API built to demonstrate routing, JSON request handling, and basic CRUD operations.
+A beginner-friendly Express REST API that demonstrates CRUD operations and JSON request handling.
 
-The service stores notes in memory, making it useful as a learning project or quick API prototype. Data resets whenever the server restarts.
+Notes are stored in memory and reset whenever the server restarts.
 
-## Features
-
-- Create and list notes
-- Update a note description by array index
-- Delete a note by array index
-- JSON request and response handling with Express
-
-## Getting started
+## Setup
 
 ```bash
 git clone https://github.com/BhaskarJadhav/myBackendProject1.git
@@ -20,25 +13,30 @@ npm install
 node server.js
 ```
 
-The API runs at `http://localhost:3000`.
+The server runs at `http://localhost:3000`.
 
-## Endpoints
+## API
 
-| Method | Route | Description |
+| Method | Endpoint | Purpose |
 | --- | --- | --- |
-| `POST` | `/notes` | Add a note from the JSON request body |
-| `GET` | `/notes` | Return all notes |
-| `PATCH` | `/notes/:index` | Update a note's `description` |
-| `DELETE` | `/notes/:index` | Delete a note by array index |
+| `POST` | `/notes` | Create a note |
+| `GET` | `/notes` | List all notes |
+| `PATCH` | `/notes/:index` | Update a note description |
+| `DELETE` | `/notes/:index` | Delete a note |
 
-Example request:
+Example body:
 
-```bash
-curl -X POST http://localhost:3000/notes \
-  -H "Content-Type: application/json" \
-  -d '{"title":"First note","description":"Build the API"}'
+```json
+{
+  "title": "First note",
+  "description": "Learn Express routing"
+}
 ```
+
+## Built with
+
+`Node.js` `Express`
 
 ## Limitations
 
-This is an introductory project, not a production service. It currently has no persistent database, validation, authentication, automated tests, or centralized error handling.
+This learning project does not include persistent storage, authentication, validation, or automated tests.
